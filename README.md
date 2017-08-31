@@ -28,49 +28,8 @@
     你可以写入代码等,每行文字只要输入两个Tab再输入文字即可  
     这里你可以输入一段代码  
   
-### 比如我们可以在多行文本框里输入一段代码,来一个Java版本的HelloWorld吧  
-`export const loadMore = {`
-	directives: {
-		'load-more': {
-			bind: (el, binding) => {
-				let windowHeight = window.screen.height;
-				let height;
-				let setTop;
-				let paddingBottom;
-				let marginBottom;
-				let requestFram;
-				let oldScrollTop;
-				let scrollEl;
-				let heightEl;
-				let scrollType = el.attributes.type && el.attributes.type.value;
-				let scrollReduce = 2;
-				if (scrollType == 2) {
-					scrollEl = el;
-					heightEl = el.children[0];
-				} else {
-					scrollEl = document.body;
-					heightEl = el;
-				}
-
-				el.addEventListener('touchstart', () => {
-					height = heightEl.clientHeight;
-					if (scrollType == 2) {
-						height = height
-					}
-					setTop = el.offsetTop;
-					paddingBottom = getStyle(el, 'paddingBottom');
-					marginBottom = getStyle(el, 'marginBottom');
-				}, false)
-
-				el.addEventListener('touchmove', () => {
-					loadMore();
-				}, false)
-
-				el.addEventListener('touchend', () => {
-					oldScrollTop = scrollEl.scrollTop;
-					moveEnd();
-				}, false)
-
+### 比如我们可以在多行文本框里输入一段代码,来一个Java版本的HelloWorld吧 
+``` 
 				const moveEnd = () => {
 					requestFram = requestAnimationFrame(() => {
 						if (scrollEl.scrollTop != oldScrollTop) {
@@ -83,29 +42,7 @@
 						}
 					})
 				}
-
-				const loadMore = () => {
-					if (scrollEl.scrollTop + windowHeight >= height + setTop + paddingBottom + marginBottom - scrollReduce) {
-						binding.value();
-					}
-				}
-			}
-		}
-	}
-};`
-`export const getStyle = (element, attr, NumberMode = 'int') => {
-    let target;
-    // scrollTop 获取方式不同，没有它不属于style，而且只有document.body才能用
-    if (attr === 'scrollTop') { 
-        target = element.scrollTop;
-    }else if(element.currentStyle){
-        target = element.currentStyle[attr]; 
-    }else{ 
-        target = document.defaultView.getComputedStyle(element,null)[attr]; 
-    }
-    //在获取 opactiy 时需要获取小数 parseFloat
-    return  NumberMode == 'float'? parseFloat(target) : parseInt(target);
-} ```javascript
+```
 ### 链接  
 1.[点击这里你可以链接到www.google.com](http://www.google.com)<br />  
 2.[点击这里我你可以链接到我的博客](http://guoyunsky.iteye.com)<br />  
