@@ -29,7 +29,7 @@
     这里你可以输入一段代码  
   
 ### 比如我们可以在多行文本框里输入一段代码,来一个Java版本的HelloWorld吧  
-`export const loadMore = {
+`export const loadMore = {`
 	directives: {
 		'load-more': {
 			bind: (el, binding) => {
@@ -92,8 +92,8 @@
 			}
 		}
 	}
-};
-export const getStyle = (element, attr, NumberMode = 'int') => {
+};`
+`export const getStyle = (element, attr, NumberMode = 'int') => {
     let target;
     // scrollTop 获取方式不同，没有它不属于style，而且只有document.body才能用
     if (attr === 'scrollTop') { 
@@ -105,8 +105,8 @@ export const getStyle = (element, attr, NumberMode = 'int') => {
     }
     //在获取 opactiy 时需要获取小数 parseFloat
     return  NumberMode == 'float'? parseFloat(target) : parseInt(target);
-} `
-### 链接  
+} ```javascript
+### 链接  
 1.[点击这里你可以链接到www.google.com](http://www.google.com)<br />  
 2.[点击这里我你可以链接到我的博客](http://guoyunsky.iteye.com)<br />  
   
